@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            text-overflow: nowrap;
+            font-size: 0;
+        }
+
+        #container:after {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            width: 0;
+            vertical-align: middle;
+            font-size: initial;
+        }
+
+        #centered {
+            text-align: center;
+            display: inline-block;
+            max-width: 100%;
+            vertical-align: middle;
+            font-size: initial;
+        }
+
+        body.show-borders #container {
+            border: 1px solid red;
+        }
+
+        body.show-borders #container:after {
+            border: 1px solid blue;
+        }
+
+        body.show-borders #centered {
+            border: 1px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="centered">
+            <h1>Title</h1>
+            <h2>Subtitle</h2>
+            <p>Text text text text text text text text</p>
+            <button onclick="document.body.classList.toggle('show-borders')">Click here to show borders</button>
+        </div>
+    </div>
+</body>
+
+</html>
